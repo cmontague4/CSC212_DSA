@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 
     /*
     for (int i = 0 ; i < out_string.size() ; i++) {
-        out_file << out_string[i] << " ";
+        out_file << out_string[i];
     }
     */
 
