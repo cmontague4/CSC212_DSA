@@ -1,3 +1,5 @@
+Put your name next to which ever part of the coding process you'd like to do
+
 Main: 
 
 - Main should be the same for all 3 cpp files, but can be modified if need be to fit each shape
