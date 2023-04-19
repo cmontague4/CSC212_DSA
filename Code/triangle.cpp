@@ -1,3 +1,6 @@
+#include <string>
+#include <fstream>
+
 void draw_triangle(int length, int depth, std::string &out){
     if (depth==0){
         for (int i = 0; i < 3; i++){
