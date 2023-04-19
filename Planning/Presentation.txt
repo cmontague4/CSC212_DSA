@@ -1,0 +1,6 @@
+Like the report, will be made in a shared Google Slides file, downloaded as a pdf, and uploaded to both the repo and Gradescope
+
+15 min. time limit
+Explanation of topic, project, and algorithm
+Review/explain code, show examples of input and output
+Answer questions if time permitting
