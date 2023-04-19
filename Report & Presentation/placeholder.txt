@@ -1,0 +1,2 @@
+Report and Presentation PDF files will go in here when done
+Just need a placeholder file since GitHub won't allow an empty folder
