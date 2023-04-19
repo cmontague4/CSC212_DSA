@@ -4,7 +4,7 @@ Main:
 
 - Main should be the same for all 3 cpp files, but can be modified if need be to fit each shape
 
-Serpinski Triangle: 
+Serpinski Triangle: Chace
 
 - Should hopefully be the easier of the 3 shapes
 
