@@ -14,6 +14,6 @@ Hilbert Curve:
 
 - Might be a more difficult shape
 
-Python Turtle Graphics:
+Python Turtle Graphics: Connor
 
 - Should be someone who is familiar/confident with reading from a file in Python & working with Turtle
