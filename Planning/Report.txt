@@ -1,3 +1,5 @@
+Report will be typed up in a shared Google Doc, downloaded as pdf, and added to the repo (also submitted seperately on Gradescope)
+
 Title Page
 
 Table of Contents
