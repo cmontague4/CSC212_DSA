@@ -1,0 +1,17 @@
+Main: 
+
+- Main should be the same for all 3 cpp files, but can be modified if need be to fit each shape
+
+Serpinski Triangle: 
+
+- Should hopefully be the easier of the 3 shapes
+
+Koch Snowflake:
+
+Hilbert Curve:
+
+- Might be a more difficult shape
+
+Python Turtle Graphics:
+
+- Should be someone who is familiar/confident with reading from a file in Python & working with Turtle
