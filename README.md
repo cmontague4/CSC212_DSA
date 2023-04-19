@@ -1,1 +1,1 @@
-# CSC212_DSA
+# CSC 212 - DSA (Recursive Graphics)
