@@ -29,7 +29,6 @@ int main(int argc, char* argv[]) {
 
     std::string out_string;
     draw_triangle(length, depth, out_string);
-    std::cout << out_string;
     
     for (int i = 1 ; i < out_string.size() ; i++) {
         if (out_string[i] == ' '){
