@@ -1,0 +1,13 @@
+Title Page
+
+Table of Contents
+
+Body:
+
+    Topic intro
+    Project Intro
+    Methods/Explanation of Algorithm
+    Implmentation (what's happening, i/o examples)
+    Show member contributions
+
+Conclusion
