@@ -13,8 +13,15 @@ int main(int argc, char* argv[]) {
     //std::ofstream out_file(argv[x]);
 
     /*
-    for (int i = 0 ; i < out_string.size() ; i++) {
-        out_file << out_string[i];
+    for (int i = 1 ; i < out_string.size() ; i++) {
+        
+        if (out_string[i] == ' '){
+            out_file << "\n";
+        }
+        
+        else{
+            out_file << out_string[i];
+        }
     }
     */
 
