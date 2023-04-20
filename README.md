@@ -1,4 +1,4 @@
-# CSC 212 - DSA (Recursive Graphics)
+# CSC 212 - DSA: Recursive Graphics
 
 ## Summary
 
