@@ -41,7 +41,19 @@ def draw_shape():
     # Open the Turtle window
     window = turtle.Screen()
     draw = turtle.Turtle()
-    draw.speed(0)
+    draw.speed(3)
+
+    # Read the first line of the file, containing directions to ensure the shape is centered
+    first_line = shape_file.readline()
+    first_line = first_line.strip()
+    horizontal,vertical = first_line.split(',')
+    horizontal = float(horizontal)
+    vertical = float(vertical)
+
+    # Move the turtle without drawing
+    draw.penup()
+    draw.goto(horizontal,vertical)
+    draw.pendown()
 
     # Set the turtle's color setting mode to the 0-255 RGB values
     turtle.colormode(255)
@@ -49,26 +61,32 @@ def draw_shape():
     # Loop through the command file
     for line in shape_file:
 
-        # Randomize the turtle's color
-        if randomize == "yes":
-            draw.color(random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
-    
         # Strip the "\n" character from each line
         line = line.strip()
 
+        # Tokenize the Turtle command and its corresponding value
         command, value = line.split(',')
-        value = int(value)
+        value = float(value)
 
+        # Randomize the turtle's color if the user chose to
+        if randomize == "yes" and (command == 'F' or command == 'B'):
+            draw.color(random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
+        
+        # Draw the command using F = forward, B = backward, L = turn left, R = turn right, U = lift the Turtle to move
         if command == 'F':
             draw.fd(value)
         elif command == 'B':
+            draw.color(255,255,255)
+            draw.penup()
             draw.bk(value)
+            draw.pendown()
+            draw.color(0,0,0)
         elif command == 'L':
             draw.left(value)
         elif command == 'R':
             draw.right(value)
 
-    # Close the window
+    # Close the window when the user clicks the mouse
     window.exitonclick()
 
 # Call to draw_shape

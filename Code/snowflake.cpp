@@ -1,8 +1,9 @@
 #include <string>
 #include <fstream>
+#include <cmath>
 
-void draw_curve(int len, int depth, std::string &out_s) {
-    if (depth == 0) {
+void draw_curve(float len, float depth, std::string &out_s) {
+    if (depth == 1) {
         out_s += " F," + std::to_string(len);
         return;
     }
@@ -19,11 +20,23 @@ void draw_curve(int len, int depth, std::string &out_s) {
 
 int main(int argc, char* argv[]) {
 
-    int length = std::stoi(argv[1]);
-    int depth = std::stoi(argv[2]);
+    float length = std::stof(argv[1]);
+    float depth = std::stof(argv[2]);
     std::ofstream out_file(argv[3]);
 
+    if (depth < 1) {
+        depth = 1;
+    }
+
+    if (length < 100) {
+        length = 100;
+    }
+    else if (length > 700) {
+        length = 700;
+    }
+
     std::string out_string;
+    out_string += " " + std::to_string(-1*length/2) + "," + std::to_string(length*1/6*sqrt(3));
 
     // To draw the entire snowflake, we have to draw 3 different curves at 120 degree angles
     for (int i = 0 ; i < 3 ; i++) {
