@@ -41,7 +41,7 @@ def draw_shape():
     # Open the Turtle window
     window = turtle.Screen()
     draw = turtle.Turtle()
-    draw.speed(3)
+    draw.speed(0)
 
     # Read the first line of the file, containing directions to ensure the shape is centered
     first_line = shape_file.readline()
