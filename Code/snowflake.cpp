@@ -2,19 +2,19 @@
 #include <fstream>
 #include <cmath>
 
-void draw_curve(float len, float depth, std::string &out_s) {
+void draw_curve(float len, float depth, std::ofstream &out) {
     if (depth == 1) {
-        out_s += " F," + std::to_string(len);
+        out << "F," + std::to_string(len) << std::endl;
         return;
     }
     else {
-        draw_curve(len/3,depth-1,out_s);
-        out_s += " L,60";
-        draw_curve(len/3,depth-1,out_s);
-        out_s += " R,120";
-        draw_curve(len/3,depth-1,out_s);
-        out_s += " L,60";
-        draw_curve(len/3,depth-1,out_s);
+        draw_curve(len/3,depth-1,out);
+        out << "L,60\n";
+        draw_curve(len/3,depth-1,out);
+        out << "R,120\n";
+        draw_curve(len/3,depth-1,out);
+        out << "L,60\n";
+        draw_curve(len/3,depth-1,out);
     }
 }
 
@@ -35,22 +35,11 @@ int main(int argc, char* argv[]) {
         length = 700;
     }
 
-    std::string out_string;
-    out_string += " " + std::to_string(-1*length/2) + "," + std::to_string(length*1/6*sqrt(3));
+    out_file << std::to_string(-1*length/2) + "," + std::to_string(length*1/6*sqrt(3)) << std::endl;
 
     // To draw the entire snowflake, we have to draw 3 different curves at 120 degree angles
     for (int i = 0 ; i < 3 ; i++) {
-        draw_curve(length, depth, out_string);
-        out_string += " R,120" ;
-    }
-    
-    for (int i = 1 ; i < out_string.size() ; i++) {
-        if (out_string[i] == ' '){
-            out_file << "\n";
-        }
-        else{
-            out_file << out_string[i];
-        }
-
+        draw_curve(length, depth, out_file);
+        out_file << "R,120\n";
     }
 }
