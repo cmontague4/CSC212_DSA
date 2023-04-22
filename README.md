@@ -2,7 +2,7 @@
 
 ## Summary
 
-Our project utilizes both C++ and Python in order to draw recursive fractals in Python's `Turtle` environment. The 3 fractals that our project covers are the Sierpinski Triangle, Koch Snowflake, and the Hilbert Curve. For each of the 3 shapes, there exists a C++ file which will write to a `csv` file a list of commands, which a seperate Python script then interprets in order to draw the shapes. The commands are in the format `Direction,Value`, where `Direction` is either `F/B/L/R`, representing forwards, backwards, left, and right, and `Value` is an integer representing the amount of pixels/degrees to move or turn. The first line of each command `csv` file is a, `(x,y)` coordinate pair which tells the Python script how to initially position the drawing cursor, so that the shapes are always centered.
+Our project utilizes both C++ and Python in order to draw recursive fractals in Python's `Turtle` environment. The 3 fractals that our project covers are the Sierpinski Triangle, Koch Snowflake, and the Hilbert Curve. For each of the 3 shapes, there exists a C++ file which will write to a `csv` file a list of commands, which a seperate Python script then interprets in order to draw the shapes. The commands are in the format `Direction,Value`, where `Direction` is either `F/B/L/R`, representing forwards, backwards, left, and right, and `Value` is an integer representing the amount of pixels/degrees to move or turn. The first line of each command `csv` file is a coordinate pair in the form `(x,y)` which tells the Python script how to initially position the drawing cursor, so that the shapes are always centered.
 
 ## Instructions
 
