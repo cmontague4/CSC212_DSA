@@ -7,7 +7,7 @@ void draw_triangle(float length, float depth, std::ofstream &out){
     
     // Base case to end recursion if depth is 1
     if (depth == 1){
-        // Loop to write the commands to draw a single equilateral triangle
+        // Loop to write the commands to draw a single equilateral triangle of smallest size
         for (int i = 0 ; i < 3 ; i++){
             out << " F," + std::to_string(length) << std::endl;
             out << " L,120\n";
@@ -15,19 +15,26 @@ void draw_triangle(float length, float depth, std::ofstream &out){
     }
     // Writes out the rest of the commands for drawing the other triangles
     else {
+        
         // Contains recursive calls that halves the length and decreases the depth by 1
-        // Shows that the inner triangles will get smaller and smaller for higher depths
         // Each command is written on a seperate line for the python draw_shape funtion to read
-        // F = Forward, B = Pick up pen and move backwards, L = Turn left, R = Turn right
-        // F and B are accompanied by the length they must move 
-        // L and R are acommpanied by the degree of the angle of their turn which is 60 for an equilateral triangle
+        
+        // Call to draw the first sub triangle
         draw_triangle(length / 2, depth - 1, out);
+        
+        // Move forward the length of the next sub triangle
         out << " F," + std::to_string(length/2) << std::endl;
+        
+        // Call to draw the second sub triangle
         draw_triangle(length / 2, depth - 1, out);
+       
+        // Reverse, turn left, move forward the same length as before, and turn right (reposition)
         out << " B," + std::to_string(length/2) << std::endl;
         out << " L,60\n";
         out << " F," + std::to_string(length/2) << std::endl;
         out << " R,60\n";
+        
+        // Draw the third sub triangle, return to the starting point before the first sub triangle was drawn
         draw_triangle(length / 2, depth - 1, out);
         out << " L,60\n";
         out << " B," + std::to_string(length/2) << std::endl;
