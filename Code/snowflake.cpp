@@ -2,12 +2,22 @@
 #include <fstream>
 #include <cmath>
 
+// Function to recursively write commands for the turtle to the outfile to draw a curve of the snowflake
 void draw_curve(float len, float depth, std::ofstream &out) {
+    
+    // Base case to end recursion if depth is 1
+    // Writes the commands to draw an equilateral triangle when called 3 times by main
     if (depth == 1) {
         out << "F," + std::to_string(len) << std::endl;
         return;
     }
     else {
+        // Contains recursive calls that divide the length by 3 and decrease the depth by 1
+        // Shows that the inner triangular curves will get smaller and smaller for higher depths
+        // Each command is written on a seperate line for the python draw_shape funtion to read
+        // L = Turn left, R = Turn right 
+        // L and R are acommpanied by the degree of the angle of their turn 
+        // They create an equilateral triangle with no base or outer point of the star
         draw_curve(len/3,depth-1,out);
         out << "L,60\n";
         draw_curve(len/3,depth-1,out);
