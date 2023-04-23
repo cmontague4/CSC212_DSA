@@ -11,21 +11,35 @@ void hilbert(float depth, float length, float angle, std::ofstream &out) {
     }
     
     // Contains recursive calls that keep the length, decrease the depth by 1, and flip the sign of the angle
-    // Shows that the length of each line will be the same
     // Each command is written on a seperate line for the python draw_shape funtion to read
-    // F = Forward, L = Turn left, R = Turn right
-    // F is by the length the turtle must move 
-    // L and R are acommpanied by the degree of the angle of their turn which is 90 or -90
+    
+    // Turn the turtle by the current angle
     out << "R," + std::to_string(angle) << std::endl;
+    
+    // Decrease the depth and flip the angle for the sub hilbert curve
     hilbert(depth - 1, length, -1*angle, out);
+    
+    // Draw the first section of the most basic hilbert curve and turn left
     out << "F," + std::to_string(length) << std::endl;
     out << "L," + std::to_string(angle) << std::endl;
+    
+    // Decrease the depth but keep the angle of turn the same for the sub hilbert curve
     hilbert(depth - 1, length, angle, out);
+    
+    // Draw the second section of the most basic hilbert curve
     out << "F," + std::to_string(length) << std::endl;
+    
+    // Decrease the depth but keeo the angle of turn the same for the sub hilbert curve
     hilbert(depth - 1, length, angle, out);
+    
+    // Turn left and draw the third and final section of the most basic hilbert curve
     out << "L," + std::to_string(angle) << std::endl;
     out << "F," + std::to_string(length) << std::endl;
+    
+    // Decrease the depth and flip the angle of turn for the sub hilbert curve
     hilbert(depth - 1, length, -1*angle, out);
+    
+    // Turn right to adjust the turtle's position after it finishes drawing the most basic hilbert curve
     out << "R," + std::to_string(angle) << std::endl;
 
 }
@@ -54,7 +68,7 @@ int main(int argc, char* argv[]) {
         // Maximum length of 700
     }
 
-    // Math to find geometric center of hilbert curve
+    // Math to find the side length of the total shape to center the drawing
     float pos = length/pow(2,(depth-1))*(pow(2,(depth-1))-0.5);
     
     // Writes the turtle's starting coordinates to the first line of the outfile to center the drawing
