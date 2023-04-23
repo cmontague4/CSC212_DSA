@@ -12,17 +12,26 @@ void draw_curve(float len, float depth, std::ofstream &out) {
         return;
     }
     else {
+        
         // Contains recursive calls that divide the length by 3 and decrease the depth by 1
-        // Shows that the inner triangular curves will get smaller and smaller for higher depths
         // Each command is written on a seperate line for the python draw_shape funtion to read
-        // L = Turn left, R = Turn right 
-        // L and R are acommpanied by the degree of the angle of their turn 
-        // They create an equilateral triangle with no base or outer point of the star
+        
+        // Call to draw the first section of the current depth
         draw_curve(len/3,depth-1,out);
+        
+        // Turn left 60 degrees
         out << "L,60\n";
+        
+        // Draw the second section (first branching section) of the current depth
         draw_curve(len/3,depth-1,out);
+        
+        // Turn right 120 degrees
         out << "R,120\n";
+        
+        // Draw the third second (second branching section) of the current depth
         draw_curve(len/3,depth-1,out);
+        
+        // Turn left 60 degrees, draw the fourth and final section of the current depth
         out << "L,60\n";
         draw_curve(len/3,depth-1,out);
     }
