@@ -2,7 +2,7 @@ import turtle
 import random
 
 # Function to handle the exception where an invalid file name is entered
-def openFile():
+def open_file():
 
     # Initialize a false boolean
     file_exists = False
@@ -28,7 +28,7 @@ def openFile():
 def draw_shape():
 
     # Get the file name from the user and open the file if it's valid
-    shape_file = openFile()
+    shape_file = open_file()
 
     # Ask the user if they'd like their shapes to be multi-colored
     while True:
