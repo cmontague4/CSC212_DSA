@@ -50,7 +50,7 @@ def draw_shape():
     horizontal = float(horizontal)
     vertical = float(vertical)
 
-    # Move the turtle without drawing
+    # Move the turtle without drawing to the start position
     draw.penup()
     draw.goto(horizontal,vertical)
     draw.pendown()
