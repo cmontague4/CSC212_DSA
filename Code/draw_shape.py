@@ -69,7 +69,7 @@ def draw_shape():
         value = float(value)
 
         # Randomize the turtle's color if the user chose to
-        if randomize == "yes" and (command == 'F' or command == 'B'):
+        if randomize == "yes" and command == 'F':
             draw.color(random.randint(0, 255),random.randint(0, 255),random.randint(0, 255))
         
         # Draw the command using F = forward, B = lift pen and move backward, L = turn left, R = turn right
